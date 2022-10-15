@@ -53,8 +53,8 @@ async function generateSprites() {
   const DataVizCore = Autodesk.DataVisualization.Core;
   const viewableType = DataVizCore.ViewableType.SPRITE;
   const spriteColor = new THREE.Color(0xffffff);
-  const baseURL = "http://localhost:3003/img/";
-  const spriteIconUrl = `${baseURL}motion.svg`;
+  const baseURL = process.env.APP_URL;
+  const spriteIconUrl = `${baseURL}img/motion.svg`;
 
   const style = new DataVizCore.ViewableStyle(
     viewableType,
