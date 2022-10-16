@@ -53,8 +53,9 @@ async function generateSprites() {
   const DataVizCore = Autodesk.DataVisualization.Core;
   const viewableType = DataVizCore.ViewableType.SPRITE;
   const spriteColor = new THREE.Color(0xffffff);
-  const baseURL = process.env.APP_URL;
-  const spriteIconUrl = `${baseURL}img/motion.svg`;
+  const baseURL = `http://localhost:3003/img`;
+  // const baseURL = process.env.PORT;
+  const spriteIconUrl = `${baseURL}/motion.svg`;
 
   const style = new DataVizCore.ViewableStyle(
     viewableType,
@@ -63,7 +64,7 @@ async function generateSprites() {
   );
 
   const viewableData = new DataVizCore.ViewableData();
-  viewableData.spriteSize = 24; // Sprites as points of size 24 x 24 pixels
+  viewableData.spriteSize = 30; // Sprites as points of size 24 x 24 pixels
 
   const myDataList = [
     { position: { x: -9.100365409851074, y: -24.92554412841797, z: 11.10097752303109 } },
