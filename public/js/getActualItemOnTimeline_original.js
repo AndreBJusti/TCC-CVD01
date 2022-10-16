@@ -27,25 +27,24 @@ function generateCardDetail(data) {
             <strong>Sensor: </strong>${sensor_dict_name[dataToShow.name]}
         </div>
         <div style="opacity: 100%;">
-            <strong>X: </strong>${dataToShow.X} m/s²
+            <strong>Temperature: </strong>${dataToShow.tmp} °C
         </div>
         <div style="opacity: 100%;">
-            <strong>Y: </strong>${dataToShow.Y} m/s²
-        </div>
-        <div style="opacity: 100%;">
-            <strong>Z: </strong>${dataToShow.Z} m/s²
+            <strong>Luminosity: </strong>${dataToShow.lux} lux
         </div>
         <div style="opacity: 100%;">
             <strong>Sensor Battery: </strong>${dataToShow.bat} V
+        </div>
+        <div style="opacity: 100%;">
+            <strong>Humidity: </strong>${dataToShow.hum}%
         </div>
     </div>
     `;
   }
 }
 
-// Corrigir o nome dos sensores
 var sensor_dict_name = {
-  "T1": "Sensor Esqerda",
-  "T2": "Sensor Meio",
-  "T1": "Sensor Direita",
+  "0004a30b00e933da": "Auditorium Gama",
+  "0004a30b00e9d364": "Women's W.C.",
+  "0004a30b00e964d5": "Auditorium Beta",
 };

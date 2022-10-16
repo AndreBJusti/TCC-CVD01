@@ -14,23 +14,19 @@ const RegisterSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    cpe: {
+    IDX: {
       type: Number,
       required: true,
     },
-    lux: {
+    X: {
       type: Number,
       required: true,
     },
-    tmp: {
+    Y: {
       type: Number,
       required: true,
     },
-    hum: {
-      type: Number,
-      required: true,
-    },
-    vol: {
+    Z: {
       type: Number,
       required: true,
     },

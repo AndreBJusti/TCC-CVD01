@@ -1,35 +1,35 @@
 var timelineData = [];
 
 function generateTimeline(document) {
-  var sensor_esquerda = [];
-  var sensor_meio = [];
-  var sensor_direita = [];
+  var data_sensor_beta = [];
+  var data_sensor_gama = [];
+  var data_sensor_wc = [];
 
-  fetch("/registers/T1").then((res) => {
+  fetch("/registers/0004a30b00e964d5").then((res) => {
     res
       .json()
       .then((data) => {
-        sensor_esquerda = data;
+        data_sensor_beta = data;
       })
       .then(() => {
-        fetch("/registers/T2").then((res) => {
+        fetch("/registers/0004a30b00e933da").then((res) => {
           res.json().then((data) => {
-            sensor_meio = data;
+            data_sensor_gama = data;
           });
         });
       })
       .then(() => {
-        fetch("/registers/T1").then((res) => {
+        fetch("/registers/0004a30b00e9d364").then((res) => {
           res
             .json()
             .then((data) => {
-              sensor_direita = data;
+              data_sensor_wc = data;
             })
             .then(() => {
               let newData = joinTimestamps(
-                sensor_esquerda,
-                sensor_meio,
-                sensor_direita
+                data_sensor_beta,
+                data_sensor_gama,
+                data_sensor_wc
               );
               newData.forEach((register) => {
                 let element = document.createElement("div");
