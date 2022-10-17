@@ -14,11 +14,11 @@ function generateCardDetail(data) {
     console.log("entrei no card detail");
     let dataToShow = [];
     if (actualSprite == 10) {
-      dataToShow = data.gama;
+      dataToShow = data.esq;
     } else if (actualSprite == 11) {
-      dataToShow = data.beta;
+      dataToShow = data.meio;
     } else {
-      dataToShow = data.wc;
+      dataToShow = data.dir;
     }
     card.innerHTML = "";
     card.innerHTML += `
@@ -44,8 +44,9 @@ function generateCardDetail(data) {
 }
 
 // Corrigir o nome dos sensores
+// Talvez deixar os dois sensores da extremidade com o mesmo valor?
 var sensor_dict_name = {
-  "T1": "Sensor Esqerda",
+  "T1": "Sensor Extremidade",
+  // "T2": "Sensor Direita",
   "T2": "Sensor Meio",
-  "T1": "Sensor Direita",
 };
