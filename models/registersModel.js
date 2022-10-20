@@ -3,14 +3,14 @@ const mongoose = require("mongoose");
 const RegisterSchema = new mongoose.Schema(
   {
     _id: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+    },
+    DISP: {
       type: String,
       required: true,
     },
-    name: {
-      type: String,
-      required: true,
-    },
-    bat: {
+    BAT: {
       type: Number,
       required: true,
     },
@@ -23,14 +23,14 @@ const RegisterSchema = new mongoose.Schema(
       required: true,
     },
     Y: {
-      type: Number,
+      type: String,
       required: true,
     },
     Z: {
       type: Number,
       required: true,
     },
-    timestamp: {
+    HORARIO: {
       type: Number,
       required: true,
     },
@@ -38,4 +38,4 @@ const RegisterSchema = new mongoose.Schema(
   { versionKey: false, timestamps: true }
 );
 
-module.exports = mongoose.model("registers", RegisterSchema);
+module.exports = mongoose.model("Eureka", RegisterSchema);

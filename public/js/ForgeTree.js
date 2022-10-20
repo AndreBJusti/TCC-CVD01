@@ -1,9 +1,9 @@
 $(document).ready(function () {
   $(function () {
-    
     generateTimeline(document);
     getForgeToken(function (access_token) {
-      let urn = "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHl4dWd6djg1Y2pjdWQ0cXZwZTJiZ2c1ZWF2b2twZWEtdGNjLWN2ZDAxL1JWVDIwMjFfUG9udGUlMjBBbmNoaWV0YSUyMC0lMjBrbTEzX1IwNl9BMzYwLnJ2dA"
+      let urn =
+        "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHl4dWd6djg1Y2pjdWQ0cXZwZTJiZ2c1ZWF2b2twZWEtdGNjLWN2ZDAxL1JWVDIwMjFfUG9udGUlMjBBbmNoaWV0YSUyMC0lMjBrbTEzX1IwNl9BMzYwLnJ2dA";
 
       jQuery.ajax({
         url:

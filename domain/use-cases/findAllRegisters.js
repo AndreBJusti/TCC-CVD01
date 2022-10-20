@@ -6,6 +6,6 @@ module.exports = {
   },
   getByName: async (name) => {
     console.log("name getByName:", name);
-    return await registersModel.find({ name: name });
+    return await registersModel.find({ DISP: name }).limit(400);
   },
 };
