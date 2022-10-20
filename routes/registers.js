@@ -10,6 +10,7 @@ module.exports = {
     const { name } = req.params;
     console.log("buscando registros...");
     const registers = await getByName(name);
+    // console.log("registers no getByName:", registers);
     return res.status(200).json(registers);
   },
 };

@@ -5,7 +5,7 @@ function generateTimeline(document) {
   var sensor_meio = [];
   var sensor_direita = [];
 
-  fetch("/registers/T1").then((res) => {
+  fetch("/registers/T2").then((res) => {
     res
       .json()
       .then((data) => {
@@ -19,7 +19,7 @@ function generateTimeline(document) {
         });
       })
       .then(() => {
-        fetch("/registers/T1").then((res) => {
+        fetch("/registers/T2").then((res) => {
           res
             .json()
             .then((data) => {
@@ -31,10 +31,9 @@ function generateTimeline(document) {
                 sensor_meio,
                 sensor_direita
               );
-              newData.forEach((register) => {
+              newData.forEach((register, i) => {
                 let element = document.createElement("div");
                 let date = `${new Date(register.timestamp)}`;
-                console.log("date: ", date);
                 element.setAttribute("data-time", date.slice(3, 25));
                 element.setAttribute("register", register);
                 document.getElementById("timeline").appendChild(element);
@@ -46,18 +45,19 @@ function generateTimeline(document) {
 }
 
 function joinTimestamps(beta, gama, wc) {
-  beta_spliced = beta.splice(0, wc.length);
-  gama_spliced = gama.splice(0, wc.length);
+  beta_spliced = beta.splice(0, gama.length);
+  wc_spliced = wc.splice(0, gama.length);
   console.log("beta_spliced: ", beta_spliced.length);
-  console.log("gama_spliced: ", gama_spliced.length);
-  console.log("wc_spliced: ", wc.length);
+  console.log("gama: ", gama.length);
+  console.log("wc_spliced: ", wc_spliced.length);
+
   newData = [];
-  for (let index = 0; index < wc.length; index++) {
+  for (let index = 0; index < gama.length; index++) {
     newData.push({
-      timestamp: wc[index].timestamp,
+      timestamp: gama[index]["HORARIO"],
       beta: beta_spliced[index],
-      gama: gama_spliced[index],
-      wc: wc[index],
+      gama: gama[index],
+      wc: wc_spliced[index],
     });
   }
   console.log("consolidado: ", newData);

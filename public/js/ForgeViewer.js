@@ -53,8 +53,8 @@ async function generateSprites() {
   const DataVizCore = Autodesk.DataVisualization.Core;
   const viewableType = DataVizCore.ViewableType.SPRITE;
   const spriteColor = new THREE.Color(0xffffff);
-  // const baseURL = `http://localhost:3003/img`;
-  const baseURL = `https://cvd01.herokuapp.com/img`;
+  const baseURL = `http://localhost:3003/img`;
+  // const baseURL = `https://cvd01.herokuapp.com/img`;
   // const baseURL = process.env.PORT;
   const spriteIconUrl = `${baseURL}/motion.svg`;
 
@@ -68,9 +68,27 @@ async function generateSprites() {
   viewableData.spriteSize = 30; // Sprites as points of size 24 x 24 pixels
 
   const myDataList = [
-    { position: { x: -9.100365409851074, y: -24.92554412841797, z: 11.10097752303109 } },
-    { position: { x: -1.402024688720703, y: -5.7580280685424805, z: 11.10097752303109 } },
-    { position: { x: 11.085234724268494, y: 24.946354948998547, z: 11.10097752303109 } },
+    {
+      position: {
+        x: -9.100365409851074,
+        y: -24.92554412841797,
+        z: 11.10097752303109,
+      },
+    },
+    {
+      position: {
+        x: -1.402024688720703,
+        y: -5.7580280685424805,
+        z: 11.10097752303109,
+      },
+    },
+    {
+      position: {
+        x: 11.085234724268494,
+        y: 24.946354948998547,
+        z: 11.10097752303109,
+      },
+    },
   ];
 
   myDataList.forEach((myData, index) => {
