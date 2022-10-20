@@ -53,8 +53,8 @@ async function generateSprites() {
   const DataVizCore = Autodesk.DataVisualization.Core;
   const viewableType = DataVizCore.ViewableType.SPRITE;
   const spriteColor = new THREE.Color(0xffffff);
-  const baseURL = `http://localhost:3003/img`;
-  // const baseURL = `https://cvd01.herokuapp.com/img`;
+  // const baseURL = `http://localhost:3003/img`;
+  const baseURL = `https://cvd01.herokuapp.com/img`;
   // const baseURL = process.env.PORT;
   const spriteIconUrl = `${baseURL}/motion.svg`;
 
